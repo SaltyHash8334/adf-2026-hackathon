@@ -1,13 +1,11 @@
 # Phantom Flight — CTF Write-up
 
-**Category:** Forensics  
+**Challenge:** Operation Ghostlink — Decode seized Kestrel Dawn PX4 firmware, recover keying material, decrypt telemetry log, extract mission token.
+
 **Flag:** `HTB{R0MFS_3mb3dd3d_K3ys_Gh0stl1nk_D3crypt3d}`
 
----
-
-## Challenge
-
-During Operation Ghostlink, coalition analysts recovered a Kestrel Dawn flight-controller firmware image from a seized autonomous platform. The package is a real PX4 update file, but the target did not store mission material in plaintext. Instead, the firmware filesystem contains an encrypted telemetry replay bundle plus a separate bootstrap configuration that carries the transport key.
+**Category:** Forensics  
+**Event:** ADF 2026 Hackathon
 
 ---
 
@@ -114,7 +112,10 @@ HTB{R0MFS_3mb3dd3d_K3ys_Gh0stl1nk_D3crypt3d}
 
 ## Key Insights
 
-1. **Off-by-one in PFLG header:** The nonce starts at byte 12, not byte 11. The byte at offset 11 (`0x7b`) is a separator between the reserved field and the nonce. Ciphertext starts at byte 24, not byte 23.
-2. **CTR, not GCM:** Despite `crypto_profile=aes256-gcm+gzip`, the encryption mode is AES-256-CTR using the standard GCM counter block.
-3. **LZF is simple:** The `flight_capture.bin` LZF stream contains zero back-references, making decompression trivial.
-4. **No firmware code needed:** The encryption was performed externally at challenge-build time.
+1. **Off-by-one in PFLG header:** The nonce starts at byte 12, not byte 11. The byte at offset 11 (`0x7b`) is a separator between the reserved field and the nonce. Ciphertext starts at byte 24, not byte 23. This 1-byte shift was fatal to all prior decryption attempts.
+
+2. **CTR, not GCM:** Despite `crypto_profile=aes256-gcm+gzip`, the encryption mode is AES-256-CTR using the standard GCM counter block (`nonce || 0x00000002`). The GCM authentication tag is appended but not needed for decryption — it's there for integrity verification only.
+
+3. **LZF is simple:** The `flight_capture.bin` LZF stream contains zero back-references (all literal runs), making decompression a trivial byte-stripping operation.
+
+4. **No firmware code needed:** The encryption was performed externally at challenge-build time. No decrypt function exists in the ARM binary. All parameters are in the extracted artifacts.
