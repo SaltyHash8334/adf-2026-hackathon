@@ -18,7 +18,7 @@ Writeups for the ADF 2026 Hackathon CTF challenges by SaltyHash443.
 | 10 | [Analog Lifeline](writeups/analog-lifeline.md) | Hardware/Radio | `HTB{1709301337}` |
 | 11 | [Server Lookup](writeups/server-lookup.md) | Web | `HTB{3xf1ltr4t1ng_w1th_DNS_1s_s0_fun!!}` |
 | 12 | [Wade's Trap](writeups/wades-trap.md) | Forensics | `HTB{101_p3rs1st3nc3_d3t3ct3d}` |
-| 13 | Time Dilation ⚠️ | Malware/RE | `*(pending)*` |
+| 13 | Time Dilation ⚠️ | Malware/RE | `HTB{h3avy_Pr0cc3s_h0ll0w1ng_l3ads_t0_s1ngular1ty!}` |
 | 14 | [The Empire is at risk](writeups/the-empire-is-at-risk.md) | Forensics/PCAP | `HTB{th3_3mp1r3_F1n4lly_C0ll4ps3d}` |
 | 15 | [Infected](writeups/infected.md) | Forensics | `HTB{p4y1ng_th3_r4ns0m_1s_n0t_4_g00d_1d34}` |
 | 16 | [Uncoding](writeups/uncoding.md) | Crypto | `HTB{0n3_t1m3_p4d_tw0_t1m3_p4d_thr33_t1m3_p4d...}` |
