@@ -36,6 +36,7 @@ Writeups for the ADF 2026 Hackathon CTF challenges by SaltyHash443.
 | 28 | [Ghost Track](writeups/ghost-track.md) | Hardware | `HTB{4ST3R1X_ph4nt0m_l4nc3_bl4ck0ut}` |
 | 29 | [Radiated](writeups/radiated.md) | ICS/Web | `HTB{m0d8u5_h45_n0_53cu217y!!}` |
 | 30 | [RogueUplink](writeups/rogue-uplink.md) | ICS/SatCom | `HTB{r0gu3_uplink_rce_vsat_0wn3d}` |
+| 31 | [Cryptic Jumble](writeups/cryptic-jumble.md) | Cryptanalysis | `FLAG{39db93b4c4f-2ca4-4d7b-93a4-4ae8d9b18e01d}` |
 
 ## Structure
 
@@ -47,5 +48,5 @@ scripts/        # Helper scripts and tools
 
 ## Stats
 
-- **30** challenges solved
-- **30** writeups migrated
+- **31** challenges solved
+- **31** writeups migrated
