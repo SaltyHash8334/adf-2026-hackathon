@@ -39,6 +39,7 @@ Writeups for the ADF 2026 Hackathon CTF challenges by SaltyHash443.
 | 31 | [Cryptic Jumble](writeups/cryptic-jumble.md) | Cryptanalysis | `FLAG{39db93b4c4f-2ca4-4d7b-93a4-4ae8d9b18e01d}` |
 | 32 | [CryptoBabble](writeups/cryptobabble.md) | Cryptanalysis | `FLAG{STEGINSANE}` |
 | 33 | [Secure Upload](writeups/secure-upload.md) | Encryption Techniques | `FLAG{h3r3s_y0ur_s3curely_transferred_fl4g}` |
+| 34 | [NoHTTP](writeups/nhttpd.md) | Vulnerability Assessment / Web Hardening | `FLAG{Pr3dicting_a_s3cur3_bu1ld}` |
 
 ## Structure
 
@@ -50,5 +51,5 @@ scripts/        # Helper scripts and tools
 
 ## Stats
 
-- **33** challenges solved
-- **33** writeups migrated
+- **34** challenges solved
+- **34** writeups migrated
